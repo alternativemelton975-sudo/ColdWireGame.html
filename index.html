@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cold Wire Game</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #333, #111 70%);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    #cold-wire-game {
+      width: min(90vw, 760px);
+      padding: 30px 28px 24px;
+      text-align: center;
+      background: rgba(51, 51, 51, 0.96);
+      border: 4px solid #555;
+      border-radius: 14px;
+      box-shadow: 0 0 24px rgba(255, 0, 0, 0.35);
+      margin: 0 auto;
+    }
+    #cold-wire-game h2 { margin: 0 0 12px; color: #f00; font-size: 2.2rem; }
+    #cold-wire-game p { margin: 6px 0; }
+    .cold-wire-status {
+      font-size: 15px;
+      padding: 12px;
+      background: #222;
+      border-radius: 6px;
+      min-height: 20px;
+    }
+    .cold-wire-area {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 16px;
+      justify-content: center;
+      padding: 22px 0;
+      width: 100%;
+    }
+    .cold-wire-button {
+      width: 100%;
+      min-height: 82px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s;
+    }
+    .cold-wire-button:hover:not(:disabled) {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 12px currentColor;
+    }
+    .cold-wire-button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .cold-wire-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cold-wire-controls button {
+      padding: 14px 28px;
+      background: #f00;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cold-wire-controls button:hover {
+      background: #cc0000;
+      box-shadow: 0 0 12px #f00;
+    }
+  </style>
+</head>
+<body>
+  <script src="ColdWireGame.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ColdWireGame.init();
+    });
+  </script>
+</body>
+</html>
